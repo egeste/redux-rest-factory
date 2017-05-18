@@ -96,7 +96,7 @@ export default class ActionReducerFactory {
         const id = parseInt(inputId, 10)
         dispatch({ type: singleReadAction, id })
 
-        const requestSpec = this.this.apiSpec.fetch(token, pathname, id)
+        const requestSpec = this.this.apiSpec.read(token, pathname, id)
         if (typeof modifyRequest === 'function') modifyRequest(requestSpec)
 
         return requestSpec.then(item => {
